@@ -1,6 +1,0 @@
-// every appartment should have
-/*
-
-
-
-*/
