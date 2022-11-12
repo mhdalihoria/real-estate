@@ -1,0 +1,6 @@
+// every appartment should have
+/*
+
+
+
+*/
