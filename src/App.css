@@ -1,0 +1,76 @@
+:root {
+    --main-dark: #0d323d;
+    --secondary-dark: #5e9db3
+}
+
+.icon-small {
+    background: var(--main-dark) ;
+    color: white;
+    padding: 10px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-right: 5px;
+    
+}
+
+.listing--card {
+    max-width: 250px;
+    height: auto;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.card-badge {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+
+    background: white;
+    padding: 5px 25px;
+    border-radius: 9px;
+
+    font-size: .7em;
+    color:var(--secondary-dark);
+    font-weight: 700;
+}
+
+.listing--card img {
+    object-fit: cover;
+    max-width: 100%;
+
+    border-radius: 10px;
+}
+
+.card-price-location {
+    margin-top: .4em;
+}
+
+.card-price {
+    font-size: 1.3rem;
+    color: var(--main-dark);
+    font-weight: 700;
+    margin-right: .5em;
+}
+
+.card-location {
+    font-size: .95rem;
+    font-weight: 400;
+    color: #515151;
+}
+
+.card-features {
+    margin-top: .55em;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-features--text{
+    margin-right: 7px;
+}
+
+.bath-icon {
+    padding: 10px;
+}
