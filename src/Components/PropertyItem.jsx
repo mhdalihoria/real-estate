@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PropertyItem = ({
   img,
@@ -9,8 +10,15 @@ const PropertyItem = ({
   bedCount,
   bathCount,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="listing--card">
+    <div
+      className="listing--card"
+      onClick={() => {
+        navigate("/rent/1/info");
+      }}
+    >
       <div className="card-badge">{isNew ? "New" : type}</div>
       <img src={img} alt="House picture" />
       <div className="card-stats">
@@ -25,7 +33,7 @@ const PropertyItem = ({
           </span>
 
           <span className="card-features--text">
-            <i class="fa-sharp fa-solid fa-bath icon-small bath-icon"></i>
+            <i className="fa-sharp fa-solid fa-bath icon-small bath-icon"></i>
             {bathCount} Baths
           </span>
         </div>

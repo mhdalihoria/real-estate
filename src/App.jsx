@@ -6,6 +6,7 @@ import Footer from './Components/Footer'
 import Home from './Pages/Home'
 import Buy from './Pages/Buy'
 import Rent from './Pages/Rent'
+import Info from './Pages/Info'
 import './App.css'
 // ---------------- Imports above --------------------
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/buy' element={<Buy />}/>
         <Route path='/rent' element={<Rent />}/>
+        <Route path='/rent/1/info' element={<Info />}/>
       </Routes>
 
       <Footer/>
