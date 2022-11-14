@@ -5,8 +5,11 @@
     --scrollbar-fg: #bedfe4;
 }
 
-/* Styling scrollbar - start*/
+/* ********************************************* */
+/**        STYLING RENT PAGE - START           **/
+/* ********************************************* */
 
+/* Styling scrollbar - start*/
 .query-results--details--listings::-webkit-scrollbar {
     width: 6px;               /* width of the entire scrollbar */
 }
@@ -148,6 +151,15 @@
     padding: 10px;
 }
 
+/* ********************************************* */
+/**           STYLING RENT PAGE - END           **/
+/* ********************************************* */
+
+
+
+/* ********************************************* */
+/**           MEDIA QUERIES - START             **/
+/* ********************************************* */
 
 @media (min-width: 600px) {
     .query-results--details--listings {
@@ -205,3 +217,7 @@
 
 
 }
+
+/* ********************************************* */
+/**           MEDIA QUERIES - END             **/
+/* ********************************************* */

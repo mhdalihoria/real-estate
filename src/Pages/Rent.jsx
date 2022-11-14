@@ -31,11 +31,11 @@ const Rent = () => {
 
     setFilteredCards(cardElements)
   };
-  console.log(filteredCards);
 
-  // if(filteredCards.length === 0) {
-  //   return "Error"
-  // }
+  if(filteredCards.length === 0) {
+    return "Error"
+  }
+
 
   return (
     <div>
