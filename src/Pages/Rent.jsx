@@ -1,4 +1,5 @@
 import React from "react";
+import Map from "../Components/Map";
 import PropertyItem from "../Components/PropertyItem";
 import { cardDetails } from "../utils/mockDB";
 
@@ -12,7 +13,8 @@ const Rent = () => {
   return (
     <div>
       <div className="query-results">
-        <div className="query-results--map"></div>
+        {/* <div className="query-results--map"></div> */}
+        <Map />
         <div className="query-results--details">
           <div className="query-results--details--listings">
             {itemElements}
