@@ -37,12 +37,8 @@ const Home = () => {
             onChange={handleChange}
             placeholder="Location of your search"
           />
-          <select
-            name="type"
-            value={search.type}
-            onChange={handleChange}
-          >
-            
+          
+          <select name="type" value={search.type} onChange={handleChange}>  
             <option value="sale">For Sale</option>
             <option value="rent">
               For Rent
@@ -54,6 +50,19 @@ const Home = () => {
             <option value="1.000">1.000</option>
             <option value="3.000">3.000</option>
           </select>
+          <select name="roomCount" value={search.roomCount} onChange={handleChange}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <select name="bedCount" value={search.bedCount} onChange={handleChange}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+
           <button>Submit</button>
         </form>
       </div>
