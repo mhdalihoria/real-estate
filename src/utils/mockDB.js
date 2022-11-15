@@ -172,4 +172,13 @@ export const cardDetails = [{
   price: '3.000',
   bedCount: 2,
   bathCount: 2,
+},
+{
+  img: "https://cdn.discordapp.com/attachments/885177595803603014/1041251376493244416/todd-kent-178j8tJrNlc-unsplash.jpg",
+  isNew: false,
+  type: "Sale",
+  location: "New Baghdad, Iraq",
+  price: '3.000',
+  bedCount: 3,
+  bathCount: 2,
 },];

@@ -1,12 +1,13 @@
-import {useState} from 'react'
+import { useState, useContext } from "react";
+import { ContextObj, initialState } from "../Context";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const { setData } = useContext(ContextObj);
 
-  const [search, setSearch] = useState({
-    location: "",
-    saleStatus: 'rent',
-    price: "3000",
-  });
+  const [search, setSearch] = useState(initialState);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,15 +21,14 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log(search)
+    setData(search);
+    navigate("/rent");
+    // console.log(search)
   };
-  
+
   return (
     <div>
-      <div className="title">
-        Home
-      </div>
+      <div className="title">Home</div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <input
@@ -39,10 +39,11 @@ const Home = () => {
             placeholder="Location of your search"
           />
           <select
-            name="saleStatus"
-            value={search.saleStatus}
+            name="type"
+            value={search.type}
             onChange={handleChange}
           >
+            
             <option value="sale">For Sale</option>
             <option value="rent">
               For Rent
@@ -51,16 +52,14 @@ const Home = () => {
           </select>
           <select name="price" value={search.price} onChange={handleChange}>
             <option value="200">200</option>
-            <option value="1000">1000</option>
-            <option value="3000">
-              3000
-            </option>
+            <option value="1.000">1.000</option>
+            <option value="3.000">3.000</option>
           </select>
           <button>Submit</button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
