@@ -23,7 +23,6 @@ const Home = () => {
     e.preventDefault();
     setData(search);
     navigate("/rent");
-    // console.log(search)
   };
 
   return (
