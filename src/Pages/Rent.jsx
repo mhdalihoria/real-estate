@@ -1,17 +1,20 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useMemo } from "react";
 import { ContextObj, initialState } from "../Context";
 import PropertyItem from "../Components/PropertyItem";
 import Map from "../Components/Map";
 import { cardDetails } from "../utils/mockDB";
+// import { generateRandomCoords } from "../utils/randomCoords";
 
 const Rent = () => {
-  const { data } = useContext(ContextObj); //receives data from context
+  const { data, randomCoordinates } = useContext(ContextObj); //receives data from context
   const dataObjToArr = Object.keys(data); //Transforming the Object to an array for later use
   const [search, setSearch] = useState(() => {
     //the state that holds the search query that will be used to filter the data from MockDB
     // if there is info from "data" we put that in the input fields, if not, put these default values (displays info for the user who came from "/home")
     return dataObjToArr.length !== 0 ? data : initialState;
   });
+
+  const coords = useMemo(() => (randomCoordinates), []);
 
   const filterCards = () => {
     let cardElements = cardDetails.filter((card) => {
@@ -80,7 +83,7 @@ const Rent = () => {
           </div>
           <div className="query-results">
             {/* This is the side the map occupies */}
-            <Map />
+            <Map coords={coords}/>
             {/* This is the side the details occupy */}
             <div className="query-results--details">
               <div className="query-results--details--listings">
