@@ -32,7 +32,7 @@ const Rent = () => {
     e.preventDefault();
     
     let cardElements = cardDetails.filter(card => {
-      return search.saleStatus === card.type.toLocaleLowerCase() && search.price === card.price.replace(".",'')
+      return search.type === card.type.toLocaleLowerCase() && search.price === card.price
     })
 
     setFilteredCards(cardElements)
