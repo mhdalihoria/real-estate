@@ -26,7 +26,7 @@ const Footer = () => {
               <span className="stronger-text">Oswa</span>Tech
             </span>
             <p className="footer-body--intro__desc thin-text">
-              The most beautiful exclusive properties and luxury apartments
+              The most beautiful exclusive properties and luxury apartments.
             </p>
             <div className="footer-body--into__socials">
               <i className="fa-brands fa-facebook"></i>

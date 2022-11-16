@@ -33,9 +33,8 @@ const Rent = () => {
 
   const filterCards = () => {
     let cardElements = cardDetails.filter((card) => {
-      
       return (
-        search.type === card.type.toLocaleLowerCase() && 
+        search.type === card.type.toLocaleLowerCase() &&
         search.price === card.price &&
         search.bedCount === card.bedCount
       );
@@ -58,49 +57,84 @@ const Rent = () => {
 
   return (
     <div>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="location"
-            value={search.location}
-            onChange={handleChange}
-            placeholder="Location of your search"
-          />
-          <select name="type" value={search.type} onChange={handleChange}>
-            <option value="sale">For Sale</option>
-            <option value="rent">For Rent</option>
-            <option value="sold">Sold Out</option>
-          </select>
-          <select name="price" value={search.price} onChange={handleChange}>
-            <option value="200">200</option>
-            <option value="1.000">1.000</option>
-            <option value="3.000">3.000</option>
-          </select>
-          <select name="roomCount" value={search.roomCount} onChange={handleChange}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-          <select
-            name="bedCount"
-            value={search.bedCount}
-            onChange={handleChange}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-          <button>Submit</button>
-        </form>
+      <div className="search-section">
+        <div className="form-title">
+          <h1 className="strong-text">Rent Your Perfect Property</h1>
+        </div>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <div className="form-search-parameters">
+            <input
+              type="text"
+              name="location"
+              value={search.location}
+              onChange={handleChange}
+              placeholder="Location of your search"
+            />
+            <select name="type" value={search.type} onChange={handleChange}>
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+              <option value="sold">Sold Out</option>
+            </select>
+            <select name="price" value={search.price} onChange={handleChange}>
+              <option value="200">200</option>
+              <option value="1.000">1.000</option>
+              <option value="3.000">3.000</option>
+            </select>
+            <select
+              name="roomCount"
+              value={search.roomCount}
+              onChange={handleChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <select
+              name="bedCount"
+              value={search.bedCount}
+              onChange={handleChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            </div>
+            <button className="submit-form-btn">Search</button>
+          </form>
+        </div>
       </div>
       <div className="query-results">
         {/* This is the side the map occupies */}
         <Map coords={coords} />
         {/* This is the side the details occupy */}
         <div className="query-results--details">
+          <div className="query-results--details--header">
+            <div className="query-results--details--header__data">
+              <h1 className="strong-text query--details--header__title">
+                Kansas Rental Buildings:
+              </h1>
+              <h2 className="regular-text query--details--header__details">
+                112 Results
+              </h2>
+            </div>
+            <div className="query-results--details--header__dropdown">
+              <h4 className="details--header__dropdown--title regular-text">
+                Sort By:
+              </h4>
+              <select
+                name=""
+                id="select-by"
+                className="details--header__dropdown"
+              >
+                <option value="name" defaultValue={"name"}>
+                  Name
+                </option>
+              </select>
+            </div>
+          </div>
           <div className="query-results--details--listings">
             {filteredCards.map((card, index) => (
               <PropertyItem {...card} key={index} />
