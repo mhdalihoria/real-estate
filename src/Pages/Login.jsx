@@ -27,7 +27,40 @@ const Login = () => {
     console.log("clicked");
   };
 
-  
+  const verifyCredentials = () => {
+    // email verification
+    // if (
+    //   loginData.email != accounts.admins[0].email ||
+    //   loginData.email != accounts.admins[0].userName
+    // ) {
+    //   setLoginErrors((prevLoginErrors) => {
+    //     return {
+    //       ...prevLoginErrors,
+    //       email: "Email/Username is not correct",
+    //     };
+    //   });
+    // } 
+    
+
+    //Password verification
+    if (loginData.pwd !== accounts.admins[0].pwd) {
+      setLoginErrors((prevLoginErrors) => {
+        return {
+          ...prevLoginErrors,
+          pwd: "Password is not correct",
+        };
+      });
+    }
+    if (loginData.pwd === accounts.admins[0].pwd) {
+      setLoginErrors((prevLoginErrors) => {
+        return {
+          ...prevLoginErrors,
+          pwd: "",
+        };
+      });
+    }
+  };
+
   return (
     <div className="login-container">
       <form onSubmit={submitHandler}>
