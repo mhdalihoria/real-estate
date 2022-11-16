@@ -1,8 +1,27 @@
 :root {
-    --main-dark: #0d323d;
-    --secondary-dark: #5e9db3;
-    --scrollbar-bg: #f1f1f1;
-    --scrollbar-fg: #bedfe4;
+  --main-dark: #0d323d;
+  --secondary-dark: #5e9db3;
+  --scrollbar-bg: #f1f1f1;
+  --scrollbar-fg: #bedfe4;
+}
+.stronger-text {
+  font-weight: 800;
+}
+
+.strong-text {
+  font-weight: 700;
+}
+
+.thin-text {
+  font-weight: 300;
+}
+
+.regular-text {
+  font-weight: 400;
+}
+
+body {
+    /* height: 100%; */
 }
 
 /* ********************************************* */
@@ -11,211 +30,382 @@
 
 /* Styling scrollbar - start*/
 .query-results--details--listings::-webkit-scrollbar {
-    width: 6px;               /* width of the entire scrollbar */
+  width: 6px; /* width of the entire scrollbar */
 }
 
 .query-results--details--listings::-webkit-scrollbar-track {
-    background: var(--scrollbar-bg);        /* color of the tracking area */
-  }
+  background: var(--scrollbar-bg); /* color of the tracking area */
+}
 
-  .query-results--details--listings::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fg);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid var(--scrollbar-bg);  /* creates padding around scroll thumb */
-  }
+.query-results--details--listings::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-fg); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--scrollbar-bg); /* creates padding around scroll thumb */
+}
 
-  /* Works on Firefox */
-.query-results--details--listings{
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-fg) var(--scrollbar-bg);
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: orange;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: blue;
-    border-radius: 20px;
-    border: 3px solid orange;
-  }
+/* Works on Firefox */
+.query-results--details--listings {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-fg) var(--scrollbar-bg);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: orange;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid orange;
+}
 
 /* Styling scrollbar - end */
 
 .query-results {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
     "details"
     "map";
 }
 
 .query-results--map {
-    grid-area: map;
-    height: 400px;
-    width: 100%;
-    background: #515151;
+  grid-area: map;
+  height: 400px;
+  width: 100%;
+  background: #515151;
 }
 
 .query-results--details {
-    grid-area: details;
-    /* padding: 1.6rem; */
+  grid-area: details;
+  /* padding: 1.6rem; */
 }
 
 .query-results--details--listings {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-    max-height: 1000px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  max-height: 1000px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .icon-small {
-    background: var(--main-dark) ;
-    color: white;
-    padding: 10px 8px;
-    border-radius: 8px;
-    font-size: 13px;
-    margin-right: 5px;
-    
+  background: var(--main-dark);
+  color: white;
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-right: 5px;
 }
 
 .listing--card {
-    max-width: 250px;
-    height: auto;
-    position: relative;
-    margin-bottom: 2rem;
-    
-    display: flex;
-    flex-direction: column;
+  max-width: 250px;
+  height: auto;
+  position: relative;
+  margin-bottom: 2rem;
 
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
 }
 
 .card-badge {
-    position: absolute;
-    right: 1em;
-    top: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
 
-    background: white;
-    padding: 5px 25px;
-    border-radius: 9px;
+  background: white;
+  padding: 5px 25px;
+  border-radius: 9px;
 
-    font-size: .7em;
-    color:var(--secondary-dark);
-    font-weight: 700;
+  font-size: 0.7em;
+  color: var(--secondary-dark);
+  font-weight: 700;
 }
 
 .listing--card img {
-    object-fit: cover;
-    max-width: 100%;
+  object-fit: cover;
+  max-width: 100%;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .card-price-location {
-    margin-top: .4em;
+  margin-top: 0.4em;
 }
 
 .card-price {
-    font-size: 1.3rem;
-    color: var(--main-dark);
-    font-weight: 700;
-    margin-right: .5em;
+  font-size: 1.3rem;
+  color: var(--main-dark);
+  font-weight: 700;
+  margin-right: 0.5em;
 }
 
 .card-location {
-    font-size: .95rem;
-    font-weight: 400;
-    color: #515151;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #515151;
 }
 
 .card-features {
-    margin-top: .55em;
+  margin-top: 0.55em;
 
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card-features--text{
-    margin-right: 7px;
+.card-features--text {
+  margin-right: 7px;
 }
 
 .bath-icon {
-    padding: 10px;
+  padding: 10px;
 }
 
 /* ********************************************* */
 /**           STYLING RENT PAGE - END           **/
 /* ********************************************* */
 
+/* ********************************************* */
+/**          STYLING FOOTER - START             **/
+/* ********************************************* */
+footer {
+  width: 100%;
+  color: #fff;
+  margin-top: 50px;
+  ;
+}
 
+.footer-upper--mail-feed {
+  background: #fff;
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px 1px rgb(167, 167, 167);
+  border-radius: 5px;
+  padding: 15px 20px;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-envelope {
+  color: var(--main-dark);
+  padding-right: 5px;
+}
+
+.mail-feed--input {
+  border: none;
+  opacity: 0.5;
+  padding: 0 10px;
+  width: 60%;
+}
+
+.mail-feed--input:focus {
+  outline: none;
+}
+
+.mail-feed--btn {
+    border: none;
+    background-color: var(--main-dark);
+    color: #fff;
+    padding: 9px 5px;
+    border-radius: 5px;
+}
+
+.footer-upper {
+  background: var(--main-dark);
+
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.footer-upper--footer-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.footer-upper--footer-body,
+.footer-body--intro,
+.footer-body--useful-links,
+.footer-body--help,
+.footer-body--download {
+  margin-top: 40px;
+}
+
+.footer-body--intro {
+  width: 250px;
+}
+
+.footer-body--intro span {
+  font-size: 1.6rem;
+}
+
+.footer-body--intro__desc {
+  font-size: 0.8rem;
+  padding-top: 0.8rem;
+  width: 85%;
+  line-height: 2em;
+}
+
+.footer-body--into__socials {
+  margin-top: 25px;
+}
+
+.footer-body--into__socials i {
+  font-size: 1.6rem;
+  padding-right: 0.5em;
+  cursor: pointer;
+}
+
+.footer-body--useful-links,
+.footer-body--help {
+  width: 115px;
+}
+
+.title {
+  margin-bottom: 1em;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 50%;
+  border-bottom: 5px solid #fff;
+  border-radius: 5px;
+}
+
+.item {
+  padding-bottom: 1em;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.download-container img {
+  width: 100px;
+  height: auto;
+  margin-top: 5px;
+  padding-right: 5px;
+}
+
+/**************footer lower************/
+.footer-lower {
+  background: #019db3;
+}
+
+.footer-lower-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 1.6rem;
+}
+
+.footer-lower--copyright,
+.footer-lower--terms {
+  font-size: 0.675rem;
+}
+
+.footer-lower--terms a,
+.footer-lower--copyright span {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-lower--terms .terms {
+  border-right: 1px solid #fff;
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* ********************************************* */
+/**          STYLING FOOTER - END             **/
+/* ********************************************* */
 
 /* ********************************************* */
 /**           MEDIA QUERIES - START             **/
 /* ********************************************* */
 
 @media (min-width: 600px) {
-    .query-results--details--listings {
-        grid-template-columns: repeat(2, 1fr);
-        max-height: 1200px;
-    }
+  .query-results--details--listings {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 1200px;
+  }
+
+  .footer-upper--mail-feed {
+    width: 400px;
+  }
+  .mail-feed--input {
+    width: 70%;
+  }
+
+  .mail-feed--btn {
+      padding: 9px 13px;
+  }
 }
 
 @media (min-width: 900px) {
-    .query-results--details--listings {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .query-results--details--listings {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 900px) {
-    .query-results {
-        grid-template-columns: 1fr 1.5fr;
-        grid-gap: 1rem;
-        grid-template-areas: 
-        "map details";
-    }
-    .query-results--details--listings {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items:start ;
-        max-height: 750px;
-    }
+  .query-results {
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 1rem;
+    grid-template-areas: "map details";
+  }
+  .query-results--details--listings {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    max-height: 750px;
+  }
 
-    .query-results--map {
-        height: 100%;
-        width: 100%;
-    }
-
+  .query-results--map {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1200px) {
-    
-    .query-results--details--listings {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .query-results--details--listings {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .listing--card {
-        max-width: 200px;
-        margin-bottom: 2rem;
-        
-    }
+  .listing--card {
+    max-width: 200px;
+    margin-bottom: 2rem;
+  }
 }
 
-
 @media (min-width: 1450px) {
-    .listing--card {
-        max-width: 250px;
-        margin-bottom: 2rem;
-        
-    }
-
-
+  .listing--card {
+    max-width: 250px;
+    margin-bottom: 2rem;
+  }
 }
 
 /* ********************************************* */
