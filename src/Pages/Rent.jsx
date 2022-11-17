@@ -2,6 +2,7 @@ import { useState, useContext, useEffect, useMemo } from "react";
 import { ContextObj, initialState } from "../Context";
 import PropertyItem from "../Components/PropertyItem";
 import Map from "../Components/Map";
+import Error from "../Components/Error";
 import { cardDetails } from "../utils/mockDB";
 
 const Rent = () => {
@@ -52,7 +53,7 @@ const Rent = () => {
   }, [data]);
 
   if (filteredCards.length === 0) {
-    return "Error";
+    return <Error/>;
   }
 
   return (

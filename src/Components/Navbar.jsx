@@ -3,16 +3,23 @@ import { useLocation, Link } from "react-router-dom";
 
 const Navbar = () => {
   let { pathname } = useLocation();
-  const [currentLocation, setCurrentLocation] = useState('/');
+  const [currentLocation, setCurrentLocation] = useState("/");
+  // const [isHamburgerActive, setIsHamburgerActive] = useState(false)
   const removeLinkStyles = {
-    textDecoration: 'none',
-    color: '#0d323d',
-    
-  }
+    textDecoration: "none",
+    color: "#0d323d",
+    alignSelf: "center",
+  };
 
   useEffect(() => {
-    setCurrentLocation(pathname.split("/")[1])
-  }, [pathname])
+    setCurrentLocation(pathname.split("/")[1]);
+  }, [pathname]);
+
+  // const activateHamburger = () => {
+  //   setIsHamburgerActive(prevIsHamburgerActive => {
+  //     return !prevIsHamburgerActive
+  //   })
+  // }
 
   return (
     <nav>
@@ -59,16 +66,23 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="nav-body--left">
+        <div className={`nav-body--left`}>
           <div className="nav-about-us">
             <p className="nav-about-us--about thin-text">About Us</p>
             <p className="nav-about-us--contact thin-text">Contact Us</p>
           </div>
           <div className="nav-login">
-            <p className="nav-login--login regular-text">LOG IN</p>
+            <Link to={"/login"} style={removeLinkStyles}>
+              <p className="nav-login--login regular-text">LOG IN</p>
+            </Link>
             <p className="nav-login--signup regular-text">SIGN UP</p>
-          </div>
         </div>
+          </div>
+          {/* <div className="hamburger" onClick={activateHamburger}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div> */}
       </div>
     </nav>
   );

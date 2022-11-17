@@ -1,8 +1,9 @@
 import React from 'react'
+import Error from '../Components/Error'
 
 const Buy = () => {
   return (
-    <div>Buy</div>
+    <Error />
   )
 }
 
