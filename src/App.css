@@ -30,9 +30,8 @@ body {
 
 nav {
   background: #fafafa;
-  box-shadow: 2px 10px 16px -17px rgba(0,0,0,0.75);
+  box-shadow: 2px 10px 16px -17px rgba(0, 0, 0, 0.75);
   margin-bottom: 40px;
-
 }
 
 .language-selector-container {
@@ -51,14 +50,14 @@ nav {
 
 .language-selector i {
   font-size: 1.5rem;
-  margin-right: .7rem;
+  margin-right: 0.7rem;
 }
 
 .language-selector select {
   background: transparent;
   color: white;
   border: none;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .nav-body {
@@ -88,7 +87,7 @@ nav {
 .nav-links p {
   display: inline-block;
   font-size: 1rem;
-  padding: .6em 2em;
+  padding: 0.6em 2em;
   border-right: 1px solid var(--main-dark);
 }
 
@@ -111,42 +110,42 @@ nav {
 .nav-about-us {
   padding: 10px 20px;
   border-right: 1px solid var(--main-dark);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .nav-about-us--about {
   margin-right: 30px;
- }
+}
 
- .nav-login {
-  margin-left: 25px;;
- }
+.nav-login {
+  margin-left: 25px;
+}
 
- .nav-login--login {
+.nav-login--login {
   margin-right: 30px;
   align-self: center;
- }
+}
 
- .nav-login--signup {
+.nav-login--signup {
   border: 1px solid var(--main-dark);
   border-radius: 5px;
   padding: 10px 10px;
- }
+}
 
- .hamburger {
+.hamburger {
   display: none;
   cursor: pointer;
- }
+}
 
- .bar {
+.bar {
   display: block;
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out ;
-  transition: all 0.3s ease-in-out ;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background: var(--main-dark);
- }
+}
 /* ********************************************* */
 /**        NAVBAR STYLING     - END           **/
 /* ********************************************* */
@@ -199,8 +198,8 @@ nav {
 
 .form-title h1 {
   text-align: center;
-  font-size: 1.7rem;
-  margin-bottom: 0.4em;
+  font-size: 1.4rem;
+  margin-bottom: 0.7em;
   color: var(--main-dark);
   letter-spacing: 1px;
 }
@@ -209,9 +208,8 @@ nav {
   margin-bottom: 10px;
   background: #fafafa;
   padding: 0 50px;
-  box-shadow: 0px 7px 17px -16px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 17px -16px rgba(0, 0, 0, 0.75);
   margin-bottom: 1rem;
-
 }
 
 .form-search {
@@ -391,6 +389,38 @@ nav {
 
 /* ********************************************* */
 /**           STYLING RENT PAGE - END           **/
+/* ********************************************* */
+
+/* ********************************************* */
+/**           STYLING ERROR PAGE - START           **/
+/* ********************************************* */
+
+.error-container {
+  color: var(--main-dark);
+  max-width: 320px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-code {
+  font-size: 2rem;
+}
+
+.error-desc {
+  font-size: 1.2rem;
+  margin: 1em 0;
+}
+
+.error-request {
+  font-size: 0.8rem;
+}
+
+/* ********************************************* */
+/**           STYLING ERROR PAGE - END           **/
 /* ********************************************* */
 
 /* ********************************************* */
@@ -585,20 +615,28 @@ footer {
   }
 }
 
-@media (min-width: 930px) { 
-.form-search {
-  flex-direction: row;
-  justify-content: space-between;
-}
-.submit-form-btn {
-  margin-top: 1rem;
-  align-self: center;
-}
+@media (min-width: 930px) {
+  .form-search {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .submit-form-btn {
+    margin-top: 1rem;
+    align-self: center;
+  }
 
-.form-search-parameters select {
-  width: 105px;
-  text-align: center;
-}
+  .form-search-parameters select {
+    width: 105px;
+    text-align: center;
+  }
+
+  .error-container {
+    max-width: 520px;
+  }
+
+  .error-code {
+    font-size: 3rem;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -652,15 +690,15 @@ footer {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .nav-body--left, 
-  .active-hamburger{
+  .nav-body--left,
+  .active-hamburger {
     position: fixed;
     width: 400px;
     height: 800px;
     top: 100px;
     gap: 0;
     flex-direction: column;
-    background: #FAFAFA;
+    background: #fafafa;
     text-align: center;
     transition: 0.3s;
     z-index: 999;
@@ -674,28 +712,23 @@ footer {
     right: -100%;
   }
 
-  .nav-about-us, 
+  .nav-about-us,
   .nav-login {
     margin: 3rem 0;
     border: none;
   }
 
-  .nav-about-us p, 
+  .nav-about-us p,
   .nav-login p {
     cursor: pointer;
   }
-  
-.nav-about-us--about,
-.nav-login--login {
-  margin-bottom: 30px;
-  margin-right: 0;
- }
 
-
-
+  .nav-about-us--about,
+  .nav-login--login {
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
 }
-
-
 
 @media (min-width: 1450px) {
   .listing--card {
