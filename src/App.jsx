@@ -7,6 +7,7 @@ import Buy from './Pages/Buy'
 import Rent from './Pages/Rent'
 import Info from './Pages/Info'
 import Login from './Pages/Login'
+import Error from "./Components/Error"
 import './App.css'
 // ---------------- Imports above --------------------
 
@@ -18,11 +19,11 @@ function App() {
       
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/home' element={<Home />}/>
         <Route path='/buy' element={<Buy />}/>
         <Route path='/rent' element={<Rent />}/>
         <Route path='/rent/1/info' element={<Info />}/>
         <Route path='/login' element={<Login />}/>
+        <Route path='/*' element={<Error />}/>
       </Routes>
 
       <Footer/>
