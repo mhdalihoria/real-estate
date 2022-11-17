@@ -47,7 +47,7 @@ const Footer = () => {
 
           {/*********** help ************/}
           <div className="footer-body--help">  
-          <p className="title strong-text">Useful Links</p>
+          <p className="title strong-text">About</p>
 
             <p className="item thin-text">FAQs</p>
             <p className="item thin-text">Terms & Conditions</p>

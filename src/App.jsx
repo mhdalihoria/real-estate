@@ -1,6 +1,6 @@
 import {Routes, Route} from "react-router-dom"
 // ---------------- Dependency imports above --------------------
-import Header from "./Components/Header"
+import Navbar from "./Components/Navbar"
 import Footer from './Components/Footer'
 import Home from './Pages/Home'
 import Buy from './Pages/Buy'
@@ -14,10 +14,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Navbar />
       
       <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='/home' element={<Home />}/>
         <Route path='/buy' element={<Buy />}/>
         <Route path='/rent' element={<Rent />}/>
         <Route path='/rent/1/info' element={<Info />}/>

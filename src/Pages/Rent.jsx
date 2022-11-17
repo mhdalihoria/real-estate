@@ -62,9 +62,10 @@ const Rent = () => {
           <h1 className="strong-text">Rent Your Perfect Property</h1>
         </div>
         <div className="form-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="form-search">
             <div className="form-search-parameters">
             <input
+              className="search-input"
               type="text"
               name="location"
               value={search.location}
@@ -77,29 +78,30 @@ const Rent = () => {
               <option value="sold">Sold Out</option>
             </select>
             <select name="price" value={search.price} onChange={handleChange}>
-              <option value="200">200</option>
-              <option value="1.000">1.000</option>
-              <option value="3.000">3.000</option>
+              <option value="200">200 USD</option>
+              <option value="1.000">1.000 USD</option>
+              <option value="3.000">3.000 USD</option>
             </select>
             <select
               name="roomCount"
               value={search.roomCount}
               onChange={handleChange}
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+              {/* <option value="2" label="somethin">Rooms</option> */}
+              <option value="1">Rooms: 1</option>
+              <option value="2">Rooms: 2</option>
+              <option value="3">Rooms: 3</option>
+              <option value="4">Rooms: 4</option>
             </select>
             <select
               name="bedCount"
               value={search.bedCount}
               onChange={handleChange}
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+              <option value="1">Beds: 1</option>
+              <option value="2">Beds: 2</option>
+              <option value="3">Beds: 3</option>
+              <option value="4">Beds: 4</option>
             </select>
             </div>
             <button className="submit-form-btn">Search</button>
