@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 const Navbar = () => {
   let { pathname } = useLocation();
   const [currentLocation, setCurrentLocation] = useState("/");
-  // const [isHamburgerActive, setIsHamburgerActive] = useState(false)
+  const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const removeLinkStyles = {
     textDecoration: "none",
     color: "#0d323d",
@@ -13,13 +13,24 @@ const Navbar = () => {
 
   useEffect(() => {
     setCurrentLocation(pathname.split("/")[1]);
-  }, [pathname]);
 
-  // const activateHamburger = () => {
-  //   setIsHamburgerActive(prevIsHamburgerActive => {
-  //     return !prevIsHamburgerActive
-  //   })
-  // }
+    const fixHamburgerBug = () => {
+      //This function fixes a bug with the hamburger icon, that happens when switching the screen sizes as the menu is opened.
+      if (window.innerWidth > 1220) {
+        setIsHamburgerActive(false);
+      } else if (window.innerWidth <= 1220) {
+        setIsHamburgerActive(true);
+      }
+    };
+
+    window.addEventListener("resize", fixHamburgerBug);
+  }, [pathname, window.innerWidth]);
+
+  const activateHamburger = () => {
+    setIsHamburgerActive((prevIsHamburgerActive) => {
+      return !prevIsHamburgerActive;
+    });
+  };
 
   return (
     <nav>
@@ -66,7 +77,9 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className={`nav-body--left`}>
+        <div
+          className={isHamburgerActive ? "active-hamburger" : "nav-body--left"}
+        >
           <div className="nav-about-us">
             <p className="nav-about-us--about thin-text">About Us</p>
             <p className="nav-about-us--contact thin-text">Contact Us</p>
@@ -76,13 +89,16 @@ const Navbar = () => {
               <p className="nav-login--login regular-text">LOG IN</p>
             </Link>
             <p className="nav-login--signup regular-text">SIGN UP</p>
-        </div>
           </div>
-          {/* <div className="hamburger" onClick={activateHamburger}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div> */}
+        </div>
+        <div
+          className={isHamburgerActive ? "rotate-hamburger" : "hamburger"}
+          onClick={activateHamburger}
+        >
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </div>
     </nav>
   );

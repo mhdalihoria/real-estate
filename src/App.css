@@ -100,7 +100,7 @@ nav {
 .nav-body--left {
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 450px;
 }
 
 .nav-body--left div {
@@ -132,7 +132,7 @@ nav {
   border-radius: 5px;
   padding: 10px 10px;
  }
-/* 
+
  .hamburger {
   display: none;
   cursor: pointer;
@@ -146,7 +146,7 @@ nav {
   -webkit-transition: all 0.3s ease-in-out ;
   transition: all 0.3s ease-in-out ;
   background: var(--main-dark);
- } */
+ }
 /* ********************************************* */
 /**        NAVBAR STYLING     - END           **/
 /* ********************************************* */
@@ -630,51 +630,72 @@ footer {
     margin-bottom: 2rem;
   }
 }
-/* 
+
 @media (max-width: 1220px) {
   .hamburger {
     display: block;
   }
 
-  .hamburger.active .bar:nth-child(2) {
+  .rotate-hamburger {
+    cursor: pointer;
+  }
+
+  .rotate-hamburger .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger.active .bar:nth-child(1) {
+  .rotate-hamburger .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .hamburger.active .bar:nth-child(3) {
+  .rotate-hamburger .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
   .nav-body--left, 
-  .nav-body--left.active{
+  .active-hamburger{
     position: fixed;
-    top: 70px;
+    width: 400px;
+    height: 800px;
+    top: 100px;
     gap: 0;
     flex-direction: column;
-    background: #fafafa;
-    width: 400px;
+    background: #FAFAFA;
     text-align: center;
     transition: 0.3s;
+    z-index: 999;
+  }
+
+  .active-hamburger {
+    right: 0;
   }
 
   .nav-body--left {
-    left: -100%;
+    right: -100%;
   }
 
   .nav-about-us, 
   .nav-login {
-    margin: 16px 0;
+    margin: 3rem 0;
+    border: none;
   }
 
-  .nav-body--left.active {
-    left: 0;
+  .nav-about-us p, 
+  .nav-login p {
+    cursor: pointer;
   }
+  
+.nav-about-us--about,
+.nav-login--login {
+  margin-bottom: 30px;
+  margin-right: 0;
+ }
+
+
+
 }
 
- */
+
 
 @media (min-width: 1450px) {
   .listing--card {
