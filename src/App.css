@@ -72,6 +72,7 @@ nav {
 .nav-body--right {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   width: 600px;
 }
 
@@ -615,6 +616,26 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  
+  .nav-links p {
+    font-size: .8rem;
+  }
+
+}
+@media (max-width: 500px) {
+
+  .nav-body--left,
+  .active-hamburger {
+    width: 10px;
+  }
+  
+  .nav-links {
+    margin-left: -1.3rem;
+    margin-top: 1rem;
+  }
+}
+
 @media (min-width: 930px) {
   .form-search {
     flex-direction: row;
@@ -676,6 +697,8 @@ footer {
 
   .rotate-hamburger {
     cursor: pointer;
+    z-index: 999; 
+
   }
 
   .rotate-hamburger .bar:nth-child(2) {
@@ -695,7 +718,7 @@ footer {
     position: fixed;
     width: 400px;
     height: 800px;
-    top: 100px;
+    /* top: 100px; */
     gap: 0;
     flex-direction: column;
     background: #fafafa;
@@ -706,10 +729,13 @@ footer {
 
   .active-hamburger {
     right: 0;
+    padding: 0 1rem;
+
   }
 
+
   .nav-body--left {
-    right: -100%;
+    right: -1000%;
   }
 
   .nav-about-us,
