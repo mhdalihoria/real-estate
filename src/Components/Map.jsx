@@ -5,7 +5,7 @@ const Map = (props) => {
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded) return <div>Loading Map Please Wait...</div>;
   return (
     <GoogleMap
       zoom={10}
