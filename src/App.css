@@ -224,8 +224,11 @@ nav {
 }
 
 .card-patch-container {
-  overflow-x: scroll;
   display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
 }
 
 .card-patch {

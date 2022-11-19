@@ -2,9 +2,6 @@ import React from 'react'
 import ViewHome from './ViewHome'
 
 const ExploreCard = ({className, imgSrc, locationName}) => {
-    // const styles = {
-    //     backgroundImage: `url(${imgSrc})`
-    // }
 
   return (
     <div className={className} >
