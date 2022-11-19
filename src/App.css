@@ -151,6 +151,45 @@ nav {
 /**        NAVBAR STYLING     - END             **/
 /* ********************************************* */
 
+
+/* ********************************************* */
+/**        HOME PAGE STYLING     - START        **/
+/* ********************************************* */
+
+/* carousel styling */
+
+.carousel-container {
+  margin-top: -40px;
+}
+
+.carousel-caption {
+  top: 15%;
+}
+
+.carousel-caption h3{
+  font-weight: 700;
+  margin-bottom: .5em;
+}
+
+.carousel-caption p{
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+.carousel-indicators {
+  transform: translateY(-100px);
+
+}
+
+
+.home-form-container {
+  transform: translateY(-100px);
+}
+
+/* ********************************************* */
+/**        HOME PAGE STYLING     - END          **/
+/* ********************************************* */
+
 /* ********************************************* */
 /**        STYLING LOGIN PAGE - START           **/
 /* ********************************************* */
@@ -844,6 +883,7 @@ footer {
   border-radius: 5px;
   padding: 15px 20px;
   transform: translateY(-50%);
+  font-size: .7rem;
 
   display: flex;
   justify-content: center;
@@ -1008,7 +1048,8 @@ footer {
   }
 
   .footer-upper--mail-feed {
-    width: 400px;
+    width: 420px;
+    font-size: 1rem;
   }
   .mail-feed--input {
     width: 70%;
@@ -1073,25 +1114,30 @@ footer {
       "imgs details";
   }
 
+  .property-info-container__location-container {
+    margin-bottom: 0rem;
+  }
+
   .property-info-container__details-container {
     margin-top: 1.5rem;
+    margin-left: 1rem;
   }
   
   .property-info-container__images{
     margin-top: 0;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   .main {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .property-info--img {
-    max-width: 25%;
+    max-width: 30%;
   }
 
   .price-amount {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   
   .price-frequency {
@@ -1127,8 +1173,12 @@ footer {
 }
 
 @media (min-width: 1200px) {
-  .query-results--details--listings {
-    /* grid-template-columns: repeat(3, 1fr); */
+  .property-info-container {
+    grid-template-columns: 550px 1fr
+  }
+
+  .price-amount {
+    font-size: 2rem;
   }
 
   .listing--card {

@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { ContextObj, initialState } from "../Context";
 import { useNavigate } from "react-router-dom";
+import CarouselContainer from "../Components/CarouselContainer"
 
 const Home = () => {
   const { setData } = useContext(ContextObj);
@@ -27,8 +28,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="title">Home</div>
-      <div className="form-container">
+      <CarouselContainer />
+      <div className="form-container home-form-container">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
