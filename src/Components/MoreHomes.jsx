@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import ViewHome from "./ViewHome";
 
 const MoreHomes = ({
   img,
@@ -24,15 +25,7 @@ const MoreHomes = ({
         </div>
         <span className="card-location more-homes-location">{location}</span>
         <div className="card-features">
-          <div
-            className="card-features--more-homes"
-            onClick={() => {
-              navigate("/rent/1/info");
-            }}
-          >
-            <span>View Home</span>
-            <span className="strong-text">{">"}</span>
-          </div>
+          <ViewHome />
           <span className="card-features--text more-homes-text strong-text">
             <i className="fa-solid fa-bed icon-small icon-smaller"></i>
             {bedCount} Beds

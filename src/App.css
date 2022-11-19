@@ -151,39 +151,162 @@ nav {
 /**        NAVBAR STYLING     - END             **/
 /* ********************************************* */
 
-
 /* ********************************************* */
 /**        HOME PAGE STYLING     - START        **/
 /* ********************************************* */
 
 /* carousel styling */
-
 .carousel-container {
   margin-top: -40px;
 }
 
 .carousel-caption {
-  top: 15%;
+  top: 25%;
 }
 
-.carousel-caption h3{
+.carousel-caption h3 {
   font-weight: 700;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
-.carousel-caption p{
+.carousel-caption p {
   font-weight: 300;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .carousel-indicators {
   transform: translateY(-100px);
-
 }
-
 
 .home-form-container {
   transform: translateY(-100px);
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+  background: #fafafa;
+  box-shadow: 0px 7px 17px -16px rgba(0, 0, 0, 0.75);
+  margin-bottom: 1rem;
+}
+
+.home-form-container input,
+.home-form-container select {
+  font-size: 0.7rem;
+}
+
+.home-form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.home-form-container input {
+  width: 100%;
+}
+
+.home-form-container select {
+  width: 30%;
+}
+
+.home-form-container button {
+  width: 130px;
+  margin: 0 auto;
+  background: var(--main-dark);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 25px;
+  transform: translateY(100%);
+}
+
+.card-patch-container {
+  overflow-x: scroll;
+  display: flex;
+}
+
+.card-patch {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(500px, 2fr);
+  grid-template-areas:
+    "main secondary"
+    "main secondary";
+}
+
+.main-card {
+  grid-area: main;
+}
+
+.secondary-card-container {
+  grid-area: secondary;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.main-card img {
+  height: 100px;
+  width: 100px;
+}
+
+/* .secondary-card img {
+  height: 110px;
+  width: 100px;
+} */
+
+.top-left,
+.top-right .bottom-left,
+.bottom-right {
+}
+
+
+.secondary-card img {
+  height: 110px;
+}
+
+.main-card,
+.secondary-card {
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.secondary-card  {
+  width: 47%
+}
+
+.main-card img,
+.secondary-card img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 100%;
+  height: 98%;
+}
+
+.main-card h1,
+.secondary-card h1 {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 0.7rem;
+  color: white;
+  background: var(--main-dark);
+  border-radius: 5px;
+  opacity: 0.7;
+  padding: 0.2em 0.5em;
+}
+
+.main-card .card-features--more-homes,
+.secondary-card .card-features--more-homes {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  padding: 0.3em 0.5em;
 }
 
 /* ********************************************* */
@@ -384,6 +507,8 @@ nav {
   flex-wrap: wrap;
 }
 
+.home-form-container input,
+.home-form-container select,
 .form-search-parameters input,
 .form-search-parameters select {
   margin-right: 1rem;
@@ -883,7 +1008,7 @@ footer {
   border-radius: 5px;
   padding: 15px 20px;
   transform: translateY(-50%);
-  font-size: .7rem;
+  font-size: 0.7rem;
 
   display: flex;
   justify-content: center;
@@ -1041,6 +1166,12 @@ footer {
 /**           MEDIA QUERIES - START             **/
 /* ********************************************* */
 
+@media (min-width: 540px) and (max-width: 600px) {
+  .home-form-container select {
+    width: 20%;
+  }
+}
+
 @media (min-width: 600px) {
   .query-results--details--listings {
     max-height: 1200px;
@@ -1067,6 +1198,50 @@ footer {
   .login-form-container {
     padding: 1.2rem 4rem;
   }
+
+  .home-form-container input,
+  .home-form-container select {
+    font-size: 1rem;
+  }
+
+  .home-form-container select {
+    width: 20%;
+  }
+
+  .home-form-container button {
+    width: 40%;
+  }
+
+
+  .card-patch {
+    grid-template-columns: 1fr 2fr; 
+    gap: 0px 0px;
+    grid-template-areas:
+      "main secondary"
+      "main secondary";
+  }
+
+
+.secondary-card-container {
+  width: 500px;
+}
+  .secondary-card {
+    height: 170px;
+  }
+  .main-card {
+    grid-area: main;
+    width: 225px;
+  }
+
+  .secondary-card .card-features--more-homes {
+    bottom: -30px;
+  }
+
+  .main-card h1,
+  .secondary-card h1 {
+    font-size: .9rem;
+  }
+  
 }
 
 @media (max-width: 600px) {
@@ -1122,8 +1297,8 @@ footer {
     margin-top: 1.5rem;
     margin-left: 1rem;
   }
-  
-  .property-info-container__images{
+
+  .property-info-container__images {
     margin-top: 0;
     justify-content: space-between;
   }
@@ -1139,7 +1314,7 @@ footer {
   .price-amount {
     font-size: 1.7rem;
   }
-  
+
   .price-frequency {
     font-size: 1rem;
   }
@@ -1150,6 +1325,29 @@ footer {
     margin-bottom: 3rem;
   }
 
+  .card-patch {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "main secondary"
+      "main secondary";
+  }
+
+  .main-card {
+    grid-area: main;
+  }
+
+  .main-card img {
+    height: 414px;
+  }
+
+  .secondary-card {
+    grid-area: secondary;
+  }
+
+  .secondary-card img {
+    height: 200px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -1170,11 +1368,29 @@ footer {
   .submit-form-btn {
     padding: 10px 40px;
   }
+
+  .carousel-caption {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .carousel-caption h3 {
+    font-size: 2rem;
+    line-height: 1.5em;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .home-form-container {
+    width: 70%;
+  }
 }
 
 @media (min-width: 1200px) {
   .property-info-container {
-    grid-template-columns: 550px 1fr
+    grid-template-columns: 550px 1fr;
   }
 
   .price-amount {
@@ -1282,6 +1498,11 @@ footer {
   .more-homes-card {
     max-width: 270px;
     margin-bottom: 2rem;
+  }
+
+  .home-form-container form {
+    width: 700px;
+    margin: auto;
   }
 }
 
