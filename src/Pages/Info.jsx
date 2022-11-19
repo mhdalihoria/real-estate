@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Map from "../Components/Map";
 import MoreHomes from "../Components/MoreHomes";
 import house from "../images/house.jpg";
 import { moreHomes } from "../utils/mockDB";
+import { ContextObj } from "../Context";
 
 const Info = () => {
   const navigate = useNavigate();
+  const {randomCoordinates} = useContext(ContextObj)
 
   return (
     <div className="info-page-container">
@@ -28,7 +31,7 @@ const Info = () => {
                 <p className="price-amount strong-text">3000$</p>
                 <p className="price-frequency">per month</p>
                 <p className="owner">
-                  <span className="strong-text">Owned by: </span> IZAR
+                <i className="fas fa-crown" style={{fontSize: "1rem"}}></i> <span className="strong-text">Owned by: </span> IZAR
                 </p>
               </div>
               <div className="share-container">
@@ -47,27 +50,27 @@ const Info = () => {
             </div>
             <div className="details-container__feature-container">
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
               <div className="feature">
-                <span>WiFi Enabled</span>
+                <span><i className="fas fa-wifi"></i>WiFi Enabled</span>
               </div>
             </div>
             <div className="details-container__contact-btns-container">
-              <button className="contact-btn">Seller Details</button>
-              <button className="contact-btn">Seller Whatsapp</button>
+              <button className="contact-btn"><i className="fas fa-info-circle"></i>Seller Details</button>
+              <button className="contact-btn"><i class="fab fa-whatsapp"></i>Seller Whatsapp</button>
             </div>
           </div>
           <div className="property-info-container__images">
@@ -83,40 +86,49 @@ const Info = () => {
           </h1>
           <div className="cards-container">
             <div className="house-location location-card">
-              <div className="location-card-map"></div>
+              <div className="location-card-map">
+                <Map coords={randomCoordinates}/>
+              </div>
               <p className="location-card-title">Nearby Places</p>
             </div>
             <div className="nearby-locations location-card">
-              <div className="location-card-map"></div>
+              <div className="location-card-map">
+                <Map coords={randomCoordinates}/>
+              </div>
               <p className="location-card-title">Nearby Places</p>
             </div>
             <div className="nearby-locations location-card">
-              <div className="location-card-map"></div>
+              <div className="location-card-map">
+                <Map coords={randomCoordinates}/>
+              </div>
               <p className="location-card-title">Nearby Places</p>
             </div>
             <div className="nearby-locations location-card">
-              <div className="location-card-map"></div>
+              <div className="location-card-map">
+                <Map coords={randomCoordinates}/>
+              </div>
               <p className="location-card-title">Nearby Places</p>
             </div>
             <div className="nearby-locations location-card">
-              <div className="location-card-map"></div>
+              <div className="location-card-map">
+                <Map coords={randomCoordinates}/>
+              </div>
               <p className="location-card-title">Nearby Places</p>
             </div>
           </div>
         </div>
         <div className="features-and-services-container">
-          <h1 className="features-services-header">Features and services:</h1>
+          <h1 className="features-services-header strong-text">Features and services:</h1>
           <div className="features-services-feature-container">
-            <div className="feature">6 bedrooms</div>
-            <div className="feature">6 bedrooms</div>
-            <div className="feature">6 bedrooms</div>
-            <div className="feature">6 bedrooms</div>
-            <div className="feature">6 bedrooms</div>
-            <div className="feature">6 bedrooms</div>
+            <div className="feature"><i className="fa-sharp fa-solid fa-bath bath-icon"></i>6 bedrooms</div>
+            <div className="feature"><i className="fa-sharp fa-solid fa-bath bath-icon"></i>6 bedrooms</div>
+            <div className="feature"><i className="fa-sharp fa-solid fa-bath bath-icon"></i>6 bedrooms</div>
+            <div className="feature"><i className="fa-sharp fa-solid fa-bath bath-icon"></i>6 bedrooms</div>
+            <div className="feature"><i className="fa-sharp fa-solid fa-bath bath-icon"></i>6 bedrooms</div>
           </div>
         </div>
         <div className="tour-vid-container">
-          <h1 className="tour-vid-title">Take a Tour in the house:</h1>
+          <h1 className="tour-vid-title strong-text">Take a Tour in the house:</h1>
           <div className="tour-vid-vid">
             <img src={house} alt="House Tour Video" />
           </div>
