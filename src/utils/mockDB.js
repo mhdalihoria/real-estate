@@ -8,6 +8,23 @@ export const accounts = {
   ],
 };
 
+export const moreHomes = {
+  img: "https://cdn.discordapp.com/attachments/885177595803603014/1041251376493244416/todd-kent-178j8tJrNlc-unsplash.jpg",
+  isNew: true,
+  type: "Rent",
+  location: "Baghdad Street 1St floor",
+  price: "1.200",
+  bedCount: 3,
+  bathCount: 1,
+  roomCount: 2,
+};
+
+/*
+IMPORTANT NOTE: due to the nature of this mock database, variables such as "location" as well as 
+Room Count (in the filtering process), it appeared to me that it's best that THESE VARIABLES ARE IGNORED
+thus, changing the parameters in the search bars in both "Rent" and "Home" pages, won't meddle in the outcome.
+*/
+
 export const cardDetails = [
   {
     img: "https://cdn.discordapp.com/attachments/885177595803603014/1041251376493244416/todd-kent-178j8tJrNlc-unsplash.jpg",
