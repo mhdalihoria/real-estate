@@ -223,6 +223,36 @@ nav {
   transform: translateY(100%);
 }
 
+.explore-homes-title-section  {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.explore-homes-title {
+  font-size: 1.2rem;
+  color: var(--main-dark);
+  padding-bottom: .3em;
+  position: relative;;
+  width: 250px;
+  margin: 0 auto .5em;
+}
+.explore-homes-title:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  height: 1px;
+  width: 90%;
+  border-bottom: 1.5px solid var(--main-dark);
+  border-radius: 10px;
+}
+
+.explore-homes-desc {
+  font-size: .8rem;
+  margin-bottom: 2em;
+}
+
 .card-patch-container {
   display: flex;
   overflow-x: scroll;
@@ -1237,7 +1267,7 @@ footer {
   }
 
   .secondary-card .card-features--more-homes {
-    bottom: -30px;
+    bottom: 5px;
   }
 
   .main-card h1,
@@ -1351,12 +1381,14 @@ footer {
   .secondary-card img {
     height: 200px;
   }
+  .secondary-card .card-features--more-homes {
+    bottom: -30px;
+  }
 }
 
 @media (min-width: 1000px) {
   .query-results {
     grid-template-columns: 1fr 1.5fr;
-    /* grid-gap: 1rem; */
     grid-template-areas: "map details";
   }
   .query-results--details--listings {
@@ -1388,6 +1420,24 @@ footer {
 
   .home-form-container {
     width: 70%;
+  }
+  
+  .explore-homes-title-section {
+    width: 50%;
+  }
+
+  .explore-homes-title {
+    font-size: 1.7rem;
+    width: 400px;
+  }
+  .explore-homes-title:before {
+    left: 50px;
+    width: 75%;
+  }
+  
+  .explore-homes-desc {
+    font-size: 1rem;
+    margin-bottom: 2.5em;
   }
 }
 

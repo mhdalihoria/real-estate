@@ -1,6 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
 import React from "react";
-import house from "../images/house.jpg";
 
 const CarouselContainer = () => {
   const styles = { height: "500px", objectFit: "cover", filter: "brightness(30%)" };

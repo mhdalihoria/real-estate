@@ -3,6 +3,7 @@ import { ContextObj, initialState } from "../Context";
 import { useNavigate } from "react-router-dom";
 import CarouselContainer from "../Components/CarouselContainer";
 import ExploreCards from "../Components/ExploreCards";
+import ExploreHomesCarousel from "../Components/ExploreHomesCarousel";
 
 const Home = () => {
   const { setData } = useContext(ContextObj);
@@ -77,9 +78,9 @@ const Home = () => {
       </div>
 
       <div className="explore-homes-container">
-        <div className="explore-homes-title-section">
-          <h1 className="explore-homes-title">Explore Homes in IRAQ</h1>
-          <p className="explore-homes-desc">
+        <div className="explore-homes-title-section ">
+          <h1 className="explore-homes-title strong-text">Explore Homes in IRAQ</h1>
+          <p className="explore-homes-desc thin-text">
             Take a deep dive and browse homes for sale, original neighbourhood
             photos, resident reviews and local insights to find what is right
             for you.
@@ -87,6 +88,8 @@ const Home = () => {
         </div>
         <ExploreCards />
       </div>
+
+      {/* <ExploreHomesCarousel /> */}
     </div>
   );
 };
