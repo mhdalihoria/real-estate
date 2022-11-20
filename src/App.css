@@ -517,7 +517,7 @@ nav {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: blue;
+  background-color: var(--scrollbar-fg);
   border-radius: 20px;
   border: 3px solid var(--scrollbar-bg);
 }
@@ -667,7 +667,7 @@ nav {
 }
 
 .listing--card {
-  max-width: 170px;
+  max-width: 150px;
   height: auto;
   position: relative;
   margin-bottom: 2rem;
@@ -1194,6 +1194,10 @@ footer {
   cursor: pointer;
 }
 
+.footer-body--into__socials i:hover {
+  opacity: .7;
+}
+
 .footer-body--useful-links,
 .footer-body--help {
   width: 115px;
@@ -1232,6 +1236,7 @@ footer {
   height: auto;
   margin-top: 5px;
   padding-right: 5px;
+  cursor: pointer;
 }
 
 /**************footer lower************/
@@ -1259,6 +1264,10 @@ footer {
 .footer-lower--copyright span {
   text-decoration: none;
   color: #fff;
+}
+
+.footer-lower--terms a:hover {
+  opacity: .7;
 }
 
 .footer-lower--terms .terms {
