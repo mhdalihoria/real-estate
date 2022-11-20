@@ -48,6 +48,6 @@
 
 
 
-    **Thank you so much for reviewing my application and I wish you a great rest of your day**
-    **Kind Regards,**
-    **Mhd Ali Houria**
+## **Thank you so much for reviewing my application and I wish you a great rest of your day**
+**Kind Regards,**
+**Mhd Ali Houria**
