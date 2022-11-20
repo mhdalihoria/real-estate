@@ -13,18 +13,20 @@ const Navbar = () => {
 
   useEffect(() => {
     setCurrentLocation(pathname.split("/")[1]);
+    console.log(root.client)
 
     const fixHamburgerBug = () => {
       //This function fixes a bug with the hamburger icon, that happens when switching the screen sizes as the menu is opened.
-      if (window.innerWidth > 1220) {
+      const width = document.getElementById('width').clientWidth;
+      if (width > 1220) {
         setIsHamburgerActive(false);
-      } else if (window.innerWidth <= 1220) {
+      } else if (width <= 1220) {
         setIsHamburgerActive(true);
       }
     };
 
     window.addEventListener("resize", fixHamburgerBug);
-  }, [pathname, window.innerWidth]);
+  }, [pathname, isHamburgerActive]);
 
   const activateHamburger = () => {
     setIsHamburgerActive((prevIsHamburgerActive) => {
