@@ -13,11 +13,10 @@ const Navbar = () => {
 
   useEffect(() => {
     setCurrentLocation(pathname.split("/")[1]);
-    console.log(root.client)
 
     const fixHamburgerBug = () => {
       //This function fixes a bug with the hamburger icon, that happens when switching the screen sizes as the menu is opened.
-      const width = document.getElementById('width').clientWidth;
+      const width = document.getElementById("width").clientWidth;
       if (width > 1220) {
         setIsHamburgerActive(false);
       } else if (width <= 1220) {
@@ -47,7 +46,9 @@ const Navbar = () => {
       <div className="nav-body">
         <div className="nav-body--right">
           <div className="logo">
-            <span className="stronger-text">Oswa</span>Tech
+            <Link to="/" style={removeLinkStyles}>
+              <span className="stronger-text">Oswa</span>Tech
+            </Link>
           </div>
           <div className="nav-links">
             <Link to="/" style={removeLinkStyles}>
