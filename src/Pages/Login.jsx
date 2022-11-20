@@ -16,6 +16,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   const changeHandler = (e) => {
+    //functions that handles the change to the controlled components and saves the values to state
     const { name, value, type, checked } = e.target;
     setLoginData((prevLoginData) => ({
       ...prevLoginData,
@@ -29,6 +30,10 @@ const Login = () => {
   };
 
   const verifyCredentials = () => {
+    //A function to verify the details of the login information
+    //if the password or email (that exist in "mockDB") don't match the input values, it throws an error
+    //if the email was in some wrong format it throws an error 
+    //then if there is no errors it allows the user to submit the information
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     // email verification
     if (
@@ -88,7 +93,12 @@ const Login = () => {
     }
   };
 
+
   useEffect(() => {
+    // I wanted to do something wih the "remember me" checkbox, so I decided to mimick what I think it would work
+    //if the user selected the checkbox, the login information will be saved in the local storage
+    //so if they decide to go to the login page again, and their information is already in localStorage they simply get redirected
+    //I didn't implement this feature fully because I wasn't sure it was wanted. But the foundation for it is still there
     if (loginData.shouldRemember) {
       localStorage.setItem("savedLogins", JSON.stringify(loginData));
     }
@@ -98,6 +108,7 @@ const Login = () => {
   }, [shouldSubmit]);
 
   const redirect = () => {
+    // a function to redirect the user if they inputted the correct type of information/succeeded in logging in
     setTimeout(()=>navigate("/"), 1000)
     
     return <div style={{width: "250px", margin: "0 auto", fontSize:"1.5rem", textAlign: "center"}}>Thank you, you'll be redirected shortly</div>

@@ -20,21 +20,26 @@
   font-weight: 400;
 }
 
-body {
-  /* height: 100%; */
-}
 
 button:hover,
 .home-form-container button:hover,
-.login-form button:hover {
+.nav-login--signup:hover,
+.share-container:hover {
   background-color: white;
   color: var(--main-dark);
   border: 1px solid var(--main-dark); 
+  transition: background-color 200ms ease-out 10ms;
 }
 
 button:active,
 .home-form-container button:active {
   box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links p:hover,
+.nav-about-us p:hover,
+.nav-login p:hover {
+  transform: scale(1.05);
 }
 
 /* ********************************************* */
@@ -1049,6 +1054,7 @@ nav {
   background: #0d323d;
   color: white;
   opacity: 0.7;
+  transition: opacity 400ms ease-out 10ms
 }
 
 .more-homes-text {
@@ -1746,6 +1752,7 @@ footer {
     cursor: pointer;
   }
 
+
   .nav-about-us--about,
   .nav-login--login {
     margin-bottom: 30px;
@@ -1777,7 +1784,7 @@ footer {
 
 @media (min-width: 1000px) and (max-width: 1100px) {
   .listing--card {
-    max-width: 250px
+    max-width: 280px
   }
 }
 

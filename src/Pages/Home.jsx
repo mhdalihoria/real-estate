@@ -3,7 +3,6 @@ import { ContextObj, initialState } from "../Context";
 import { useNavigate } from "react-router-dom";
 import CarouselContainer from "../Components/CarouselContainer";
 import ExploreCards from "../Components/ExploreCards";
-import ExploreHomesCarousel from "../Components/ExploreHomesCarousel";
 
 const Home = () => {
   const { setData } = useContext(ContextObj);
@@ -13,6 +12,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
+    //  a function that controls form elements and saves their changing information to state
     const { name, value } = e.target;
     setSearch((prevSearch) => {
       return {
@@ -24,6 +24,7 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // a function to redirect the user to the "Rent" page once the search query has been sent to Context API
     setData(search);
     navigate("/rent");
   };
@@ -89,7 +90,6 @@ const Home = () => {
         <ExploreCards />
       </div>
 
-      {/* <ExploreHomesCarousel /> */}
     </div>
   );
 };

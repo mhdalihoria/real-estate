@@ -9,14 +9,16 @@ const Rent = () => {
   const { data, randomCoordinates } = useContext(ContextObj); //receives data from context
   const dataObjToArr = Object.keys(data); //Transforming the Object to an array for later use
   const [search, setSearch] = useState(() => {
-    //the state that holds the search query that will be used to filter the data from MockDB
-    // if there is info from "data" we put that in the input fields, if not, put these default values (displays info for the user who came from "/home")
+    // The state that holds the search query that will be used to filter the data from MockDB
+    // if there is info from "data" we put that in the input fields, if not, put these default values
+    // (displays info for the user who came from "/home")
     return dataObjToArr.length !== 0 ? data : initialState;
   });
 
   const [filteredCards, setFilteredCards] = useState(cardDetails);
 
   const handleChange = (e) => {
+    // A function to control the form elements. Assigns them to state as their values change
     const { name, value } = e.target;
     setSearch((prevSearch) => {
       return {
@@ -28,11 +30,14 @@ const Rent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // When the button is clicked => we re-write the information inside "filteredCards" to match the query requested
     setFilteredCards(filterCards);
   };
 
   const filterCards = () => {
+    // We use the array method "filter" to check the items received from mockDB
+    // if the filtered info matches any of the information saved in the search state we save them in the variable "cardElements"
+    // that we use to display the query results
     let cardElements = cardDetails.filter((card) => {
       return (
         search.type === card.type.toLocaleLowerCase() &&
@@ -44,15 +49,18 @@ const Rent = () => {
     return cardElements;
   };
 
-  const coords = useMemo(() => randomCoordinates, []);
+  const coords = useMemo(() => randomCoordinates, []); // this is a function to protect the application from the unnecessary re-renders 
 
   useEffect(() => {
     if (dataObjToArr.length !== 0) {
+      //This if statement is used to fix a bug that happens when the has been a search requested (in Home) but the same 
+      //information is saved in the search state no matter what (thus it would make it seem like the search in Home had no meaning)
       setFilteredCards(filterCards);
     }
   }, [data]);
 
   if (filteredCards.length === 0) {
+    //Here is an early return statement to notify the user if they used a query that doesn't match any items in our database
     return <Error/>;
   }
 

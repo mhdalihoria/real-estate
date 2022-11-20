@@ -28,6 +28,7 @@ const Navbar = () => {
   }, [pathname, isHamburgerActive]);
 
   const activateHamburger = () => {
+    // A state that determines if there should be a nav bar or a hamburger panel
     setIsHamburgerActive((prevIsHamburgerActive) => {
       return !prevIsHamburgerActive;
     });
