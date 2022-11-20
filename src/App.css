@@ -24,6 +24,19 @@ body {
   /* height: 100%; */
 }
 
+button:hover,
+.home-form-container button:hover,
+.login-form button:hover {
+  background-color: white;
+  color: var(--main-dark);
+  border: 1px solid var(--main-dark); 
+}
+
+button:active,
+.home-form-container button:active {
+  box-shadow: inset 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
 /* ********************************************* */
 /**        NAVBAR STYLING     - START           **/
 /* ********************************************* */
@@ -228,7 +241,7 @@ nav {
   transform: translateY(100%);
 }
 
-.explore-homes-title-section  {
+.explore-homes-title-section {
   width: 70%;
   margin: auto;
   text-align: center;
@@ -237,10 +250,10 @@ nav {
 .explore-homes-title {
   font-size: 1.2rem;
   color: var(--main-dark);
-  padding-bottom: .3em;
-  position: relative;;
+  padding-bottom: 0.3em;
+  position: relative;
   width: 250px;
-  margin: 0 auto .5em;
+  margin: 0 auto 0.5em;
 }
 .explore-homes-title:before {
   content: "";
@@ -254,7 +267,7 @@ nav {
 }
 
 .explore-homes-desc {
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-bottom: 2em;
 }
 
@@ -301,7 +314,6 @@ nav {
 .bottom-right {
 }
 
-
 .secondary-card img {
   height: 110px;
 }
@@ -314,8 +326,8 @@ nav {
   margin-bottom: 1rem;
 }
 
-.secondary-card  {
-  width: 47%
+.secondary-card {
+  width: 47%;
 }
 
 .main-card img,
@@ -501,13 +513,13 @@ nav {
 }
 
 *::-webkit-scrollbar-track {
-  background: orange;
+  background: var(--scrollbar-fg);
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: blue;
   border-radius: 20px;
-  border: 3px solid orange;
+  border: 3px solid var(--scrollbar-bg);
 }
 /* Styling scrollbar - end */
 
@@ -543,6 +555,7 @@ nav {
   margin-bottom: 0.8rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .home-form-container input,
@@ -561,6 +574,13 @@ nav {
 
 .form-search-parameters input {
   font-weight: 700;
+  font-size: .7rem;
+  width: 100%;
+}
+
+.form-search-parameters select {
+  font-size: .7rem;
+  width: 20%;
 }
 
 .submit-form-btn {
@@ -603,19 +623,19 @@ nav {
 }
 
 .query--details--header__title {
-  font-size: 1.2rem;
+  font-size: .9rem;
   color: var(--main-dark);
 }
 
 .query--details--header__details {
-  font-size: 1.3rem;
+  font-size: .9rem;
   color: var(--main-dark);
   padding-top: 0.4em;
 }
 
 .details--header__dropdown--title {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   padding-right: 0.25em;
 }
 
@@ -625,6 +645,7 @@ nav {
   color: var(--main-dark);
   background: #fff;
   padding: 7px 17px 7px 25px;
+  font-size: 0.7rem;
 }
 
 .query-results--details--listings {
@@ -639,14 +660,14 @@ nav {
 .icon-small {
   background: var(--main-dark);
   color: white;
-  padding: 10px 8px;
+  padding: 0.8em 0.7em;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 9px;
   margin-right: 5px;
 }
 
 .listing--card {
-  max-width: 270px;
+  max-width: 170px;
   height: auto;
   position: relative;
   margin-bottom: 2rem;
@@ -667,7 +688,7 @@ nav {
   padding: 5px 25px;
   border-radius: 9px;
 
-  font-size: 0.7em;
+  font-size: 0.5em;
   color: var(--secondary-dark);
   font-weight: 700;
 }
@@ -684,14 +705,14 @@ nav {
 }
 
 .card-price {
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   color: var(--main-dark);
   font-weight: 700;
   margin-right: 0.5em;
 }
 
 .card-location {
-  font-size: 0.95rem;
+  font-size: 0.6rem;
   font-weight: 400;
   color: #515151;
 }
@@ -704,11 +725,13 @@ nav {
 }
 
 .card-features--text {
-  margin-right: 7px;
+  margin-right: 0.8em;
+  font-size: 0.6rem;
+  font-weight: 600;
 }
 
 .bath-icon {
-  padding: 10px;
+  padding: 0.8em;
 }
 
 /* ********************************************* */
@@ -821,7 +844,7 @@ nav {
   border: 2px solid var(--main-dark);
   border-radius: 5px;
   padding: 7px 15px;
-  font-size: .7rem;
+  font-size: 0.7rem;
   cursor: pointer;
 }
 
@@ -834,7 +857,7 @@ nav {
   font-size: 0.8em;
   margin-bottom: 3em;
   line-height: 1.8em;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
 }
 
 .details-container__feature-container,
@@ -850,16 +873,16 @@ nav {
   width: 150px;
   margin-bottom: 1em;
   text-align: left;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .fa-wifi {
   background: var(--main-dark);
   color: #fff;
-  font-size: .5rem;
+  font-size: 0.5rem;
   padding: 8px 5px;
   border-radius: 5px;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .details-container__contact-btns-container {
@@ -874,16 +897,17 @@ nav {
   border: 1px solid var(--main-dark);
   border-radius: 5px;
   padding: 10px 15px;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 .contact-btn:hover {
   background: var(--main-dark);
   color: white;
 }
 
-.fa-info-circle, .fa-whatsapp {
+.fa-info-circle,
+.fa-whatsapp {
   margin-right: 5px;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .location-and-places-container {
@@ -912,7 +936,8 @@ nav {
   text-align: center;
 }
 
-.location-card-map, .location-card-map .query-results--map {
+.location-card-map,
+.location-card-map .query-results--map {
   height: 120px;
   margin: 0.5rem;
 }
@@ -941,7 +966,7 @@ nav {
 
 .features-services-feature-container .feature {
   width: 150px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 0.5rem;
 }
 
@@ -949,7 +974,7 @@ nav {
   background: var(--main-dark);
   color: white;
   border-radius: 7px;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .tour-vid-container {
@@ -1023,8 +1048,7 @@ nav {
 .card-features--more-homes:hover {
   background: #0d323d;
   color: white;
-  opacity: .7;
-
+  opacity: 0.7;
 }
 
 .more-homes-text {
@@ -1199,6 +1223,10 @@ footer {
   cursor: pointer;
 }
 
+.item:hover {
+  opacity: 0.6;
+}
+
 .download-container img {
   width: 100px;
   height: auto;
@@ -1247,7 +1275,6 @@ footer {
 /**           MEDIA QUERIES - START             **/
 /* ********************************************* */
 
-
 @media (min-width: 540px) and (max-width: 600px) {
   .home-form-container select {
     width: 20%;
@@ -1294,19 +1321,17 @@ footer {
     width: 40%;
   }
 
-
   .card-patch {
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 1fr 2fr;
     gap: 0px 0px;
     grid-template-areas:
       "main secondary"
       "main secondary";
   }
 
-
-.secondary-card-container {
-  width: 500px;
-}
+  .secondary-card-container {
+    width: 500px;
+  }
   .secondary-card {
     height: 170px;
   }
@@ -1321,7 +1346,7 @@ footer {
 
   .main-card h1,
   .secondary-card h1 {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .share-container {
@@ -1332,9 +1357,10 @@ footer {
     width: 47%;
     font-size: 1rem;
   }
-  
-  .fa-info-circle, .fa-whatsapp {
-    margin-right: .7em;
+
+  .fa-info-circle,
+  .fa-whatsapp {
+    margin-right: 0.7em;
     font-size: 1rem;
   }
 
@@ -1342,11 +1368,47 @@ footer {
     width: 200px;
     font-size: 1rem;
   }
-  
+
   .features-services-feature-container .feature i {
-    margin-right: .7em;
+    margin-right: 0.7em;
   }
-  
+
+  .listing--card {
+    max-width: 200px;
+  }
+
+  .card-badge {
+    padding: 5px 20px;
+    font-size: 0.5em;
+  }
+
+  .card-price-location {
+    margin-top: 0.4em;
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+
+  .card-features--text {
+    font-size: 0.7rem;
+  }
+
+  .query--details--header__title {
+    font-size: 1.2rem;
+  }
+
+  .query--details--header__details {
+    font-size: 1.3rem;
+  }
+
+  .details--header__dropdown--title {
+    font-size: 0.9rem;
+    padding-right: .4em;
+  }
+  .details--header__dropdown {
+    font-size: .8rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1421,20 +1483,20 @@ footer {
   }
 
   .price-frequency {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .feature {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  
+
   .fa-wifi {
     background: var(--main-dark);
     color: #fff;
-    font-size: .7rem;
+    font-size: 0.7rem;
     padding: 8px 5px;
     border-radius: 5px;
-    margin-right: .7em;
+    margin-right: 0.7em;
   }
 
   .details-container__desc-container {
@@ -1468,6 +1530,20 @@ footer {
   }
   .secondary-card .card-features--more-homes {
     bottom: -30px;
+  }
+
+  .form-search-parameters {
+    justify-content: flex-start;
+  }
+
+  .form-search-parameters input {
+    font-size: .7rem;
+    width: 200px;
+  }
+
+  .form-search-parameters input,
+  .form-search-parameters select {
+    font-size: .8rem;
   }
 }
 
@@ -1506,7 +1582,7 @@ footer {
   .home-form-container {
     width: 70%;
   }
-  
+
   .explore-homes-title-section {
     width: 50%;
   }
@@ -1519,7 +1595,7 @@ footer {
     left: 50px;
     width: 75%;
   }
-  
+
   .explore-homes-desc {
     font-size: 1rem;
     margin-bottom: 2.5em;
@@ -1528,7 +1604,6 @@ footer {
   .price-frequency {
     font-size: 1rem;
   }
-
 }
 
 @media (min-width: 1200px) {
@@ -1563,6 +1638,10 @@ footer {
   .features-services-feature-container .feature {
     font-size: 1.1rem;
     width: 200px;
+  }
+
+  .form-search-parameters input {
+    width: 350px;
   }
 }
 
