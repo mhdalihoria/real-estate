@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { accounts } from "../utils/mockDB";
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
     pwd: "",
   });
   const [shouldSubmit, setShouldSubmit] = useState(false);
+  const navigate = useNavigate()
 
   const changeHandler = (e) => {
     const { name, value, type, checked } = e.target;
@@ -27,6 +29,7 @@ const Login = () => {
   };
 
   const verifyCredentials = () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     // email verification
     if (
       loginData.email !== accounts.admins[0].email
@@ -39,6 +42,16 @@ const Login = () => {
         };
       });
     }
+
+    if (!regex.test(loginData.email)) {
+      setLoginErrors((prevLoginErrors) => {
+        return {
+          ...prevLoginErrors,
+          email: "This is not a valid email format!",
+        };
+      });
+    }
+    
     if (loginData.email === accounts.admins[0].email) {
       setLoginErrors((prevLoginErrors) => {
         return {
@@ -47,6 +60,7 @@ const Login = () => {
         };
       });
     }
+    
 
     //Password verification
     if (loginData.pwd !== accounts.admins[0].pwd) {
@@ -83,10 +97,16 @@ const Login = () => {
     }
   }, [shouldSubmit]);
 
+  const redirect = () => {
+    setTimeout(()=>navigate("/"), 1000)
+    
+    return <div style={{width: "250px", margin: "0 auto", fontSize:"1.5rem", textAlign: "center"}}>Thank you, you'll be redirected shortly</div>
+  }
+
   return (
     <>
       {shouldSubmit ? (
-        <div>Thank you, you'll be redirected shortly</div>
+        redirect()
       ) : (
         <div className="login-container">
           <h1 className="login-title regular-text">Login As User</h1>
