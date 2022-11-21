@@ -90,7 +90,7 @@ const Navbar = () => {
           </div>
           <div className="nav-login">
             <Link to={"/login"} style={removeLinkStyles}>
-              <p className="nav-login--login regular-text">LOG IN</p>
+              <p className={`nav-login--login regular-text ${currentLocation === "login" && "link-selected"}`}>LOG IN</p>
             </Link>
             <p className="nav-login--signup regular-text">SIGN UP</p>
           </div>
