@@ -1294,6 +1294,10 @@ footer {
   .form-search-parameters select {
     width: 100px;
   }
+
+  .login-form-container {
+    margin-bottom: 15rem;
+  }
 }
 @media (min-width: 540px) and (max-width: 600px) {
   .home-form-container select {
@@ -1326,6 +1330,10 @@ footer {
 
   .login-form-container {
     padding: 1.2rem 4rem;
+  }
+
+  .explore-homes-card-container {
+    margin-bottom: 15rem;
   }
 
   .home-form-container input,
@@ -1651,6 +1659,11 @@ footer {
   .secondary-card .card-features--more-homes {
     bottom: -50px;
   }
+
+  .home-form-container form {
+    width: 600px;
+    margin: auto;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1770,10 +1783,7 @@ footer {
     margin-bottom: 2rem;
   }
 
-  .home-form-container form {
-    width: 700px;
-    margin: auto;
-  }
+  
 }
 
 @media (min-width: 250px) and (max-width: 400px) {
